@@ -58,6 +58,11 @@ class ProductEditScreen extends Screen
             Button::make('Guardar')
                 ->icon('save')
                 ->method('save'),
+            Button::make('Eliminar')
+                ->icon('delete')
+                ->isSee($this->course->exists)
+                ->method('delete'),
+
         ];
     }
 

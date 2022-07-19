@@ -42,6 +42,10 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.products.list')
                 ->permission('platform.products.list')
                 ->title(''),
+            Menu::make('Ver Pagina Publica')
+                ->icon('cube')
+                ->route('public.list')
+                ->title(''),
 /*
             Menu::make('Dropdown menu')
                 ->icon('code')

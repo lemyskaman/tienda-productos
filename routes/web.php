@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\CoursesController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\CoursesController::class, 'index'])->name('public.list');
 
 /*
 Route::middleware([
