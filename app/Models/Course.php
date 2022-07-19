@@ -4,11 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+    use Orchid\Screen\AsSource;
 
 class Course extends Model
 {
-    use HasFactory;
 
+    use HasFactory;
+    use AsSource;
+
+
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'currency_code'
+
+    ];
 
     static $currencies =
         array(
