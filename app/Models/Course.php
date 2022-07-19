@@ -21,6 +21,12 @@ class Course extends Model
 
     ];
 
+    protected $casts = [
+        'price' => 'float',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
+    ];
+
     static $currencies =
         array(
             array('code' => 'AFN',

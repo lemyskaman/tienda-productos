@@ -25,10 +25,11 @@ class ProductEditScreen extends Screen
      */
     public function query(Course $course): iterable
     {
+
         $this->course = $course;
 
         return [
-            'course' => $course,
+            'curso' => $course,
         ];
     }
 

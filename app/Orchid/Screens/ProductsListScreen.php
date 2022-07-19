@@ -2,6 +2,8 @@
 
 namespace App\Orchid\Screens;
 
+use App\Models\Course;
+use App\Orchid\Layouts\CoursesListLayout;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
 
@@ -16,7 +18,9 @@ class ProductsListScreen extends Screen
      */
     public function query(): iterable
     {
-        return [];
+        return [
+            'courses'   => Course::paginate(10),
+        ];
     }
 
     /**
@@ -50,6 +54,6 @@ class ProductsListScreen extends Screen
      */
     public function layout(): iterable
     {
-        return [];
+        return [CoursesListLayout::class];
     }
 }
