@@ -78,7 +78,6 @@ class ProductEditScreen extends Screen
 
         $validated = $request->validate([
             'curso.name' => 'required|string|max:255',
-            'curso.description' => 'string|max:255',
             'curso.price' => 'required|numeric',
             'curso.currency_code' => [
                 'required',
