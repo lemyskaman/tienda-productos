@@ -11,7 +11,9 @@ class CoursesController extends Controller
     public function index(Request $request){
 
         $location = geoip($request->ip)->getLocation();
-
+        if ($location->currency == 'VEF'){
+            $location->currency='VES';
+        }
 
         $courses = Course::all()->map(function($course) use ($location){
 
