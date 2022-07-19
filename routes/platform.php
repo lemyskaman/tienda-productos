@@ -105,6 +105,36 @@ Route::screen('example', ExampleScreen::class)
             ->push('Example screen');
     });
 
+
+
+// Platform > System > Roles > Role
+Route::screen('products/{product}/edit', \App\Orchid\Screens\ProductEditScreen::class)
+    ->name('platform.products.edit')
+    ->breadcrumbs(function (Trail $trail, $role) {
+        return $trail
+            ->parent('platform.products.list')
+            ->push(__('Productos'), route('platform.products.edit', $role));
+    });
+
+// Platform > System > Roles > Create
+Route::screen('products/create', \App\Orchid\Screens\ProductEditScreen::class)
+    ->name('platform.products.create')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.products.list')
+            ->push(__('Create'), route('platform.products.create'));
+    });
+
+// Platform > System > Roles
+Route::screen('products', \App\Orchid\Screens\ProductsListScreen::class)
+    ->name('platform.products.list')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push(__('Productos'), route('platform.products.list'));
+    });
+
+
 Route::screen('example-fields', ExampleFieldsScreen::class)->name('platform.example.fields');
 Route::screen('example-layouts', ExampleLayoutsScreen::class)->name('platform.example.layouts');
 Route::screen('example-charts', ExampleChartsScreen::class)->name('platform.example.charts');

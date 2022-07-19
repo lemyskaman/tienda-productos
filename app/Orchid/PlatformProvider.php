@@ -28,14 +28,21 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
+            /*
             Menu::make('Example screen')
                 ->icon('monitor')
                 ->route('platform.example')
                 ->title('Navigation')
                 ->badge(function () {
                     return 6;
-                }),
+                }),*/
 
+            Menu::make('Productos')
+                ->icon('cube')
+                ->route('platform.products.list')
+                ->permission('platform.products.list')
+                ->title(''),
+/*
             Menu::make('Dropdown menu')
                 ->icon('code')
                 ->list([
@@ -81,7 +88,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->target('_blank')
                 ->badge(function () {
                     return Dashboard::version();
-                }, Color::DARK()),
+                }, Color::DARK()),*/
 
             Menu::make(__('Users'))
                 ->icon('user')
@@ -117,6 +124,10 @@ class PlatformProvider extends OrchidServiceProvider
             ItemPermission::group(__('System'))
                 ->addPermission('platform.systems.roles', __('Roles'))
                 ->addPermission('platform.systems.users', __('Users')),
+            ItemPermission::group(__('products'))
+                ->addPermission('platform.products.create', __('Crear Productos'))
+                ->addPermission('platform.products.edit', __('Editar Productos'))
+                ->addPermission('platform.products.list', __('Lista Productos')),
         ];
     }
 }
