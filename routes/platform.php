@@ -30,7 +30,7 @@ use Tabuna\Breadcrumbs\Trail;
 */
 
 // Main
-Route::screen('/main', PlatformScreen::class)
+Route::screen('/main', \App\Orchid\Screens\ProductsListScreen::class)
     ->name('platform.main');
 
 // Platform > Profile

@@ -148,18 +148,18 @@ return [
 
     'default_location' => [
         'ip' => '127.0.0.0',
-        'iso_code' => 'US',
-        'country' => 'United States',
-        'city' => 'New Haven',
-        'state' => 'CT',
-        'state_name' => 'Connecticut',
-        'postal_code' => '06510',
-        'lat' => 41.31,
-        'lon' => -72.92,
-        'timezone' => 'America/New_York',
+        'iso_code' => 'ARG',
+        'country' => 'Argentina',
+        'city' => 'Ciudad de Buenos Aires',
+        'state' => 'BA',
+        'state_name' => 'Provincia de Buenos Aires',
+        'postal_code' => 'C1000-14xx',
+        'lat' => 10.16,
+        'lon' => -68.00,
+        'timezone' => 'America/Buenos_Aires',
         'continent' => 'NA',
         'default' => true,
-        'currency' => 'USD',
+        'currency' => 'ARS',
     ],
 
 ];

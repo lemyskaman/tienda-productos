@@ -36,7 +36,7 @@ class Course extends Model
 
             array('code' => 'ARS',
                 'countryname' => 'Argentina',
-                'name' => 'Argentine Peso',
+                'name' => 'Peso Argentino',
                 'symbol' => '&#36;'),
 
             array('code' => 'AWG',
