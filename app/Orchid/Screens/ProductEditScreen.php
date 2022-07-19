@@ -60,12 +60,19 @@ class ProductEditScreen extends Screen
                 ->method('save'),
             Button::make('Eliminar')
                 ->icon('delete')
-                ->isSee($this->course->exists)
+                ->confirm('¿Estás seguro de eliminar este producto?')
+                ->canSee($this->course->exists)
                 ->method('delete'),
 
         ];
     }
 
+    public function delete(Course $course)
+    {
+        $course->delete();
+        Alert::info('El producto ha sido eliminado');
+        return redirect()->route('platform.products.list');
+    }
     public function save(Course $course, \Illuminate\Http\Request $request)
     {
 
